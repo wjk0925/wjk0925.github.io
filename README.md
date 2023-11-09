@@ -484,8 +484,8 @@ In publications, the author entry for yourself is identified by string array `sc
 
 ```yaml
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Wu]
+  first_name: [Junkai]
 ```
 
 If the entry matches one form of the last names and the first names, it will be underlined.
