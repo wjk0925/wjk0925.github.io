@@ -20,5 +20,5 @@ Hi! My name is Junkai Wu (伍俊愷 in Chinese). I'm a first year ECE Ph.D. stud
 
 Before coming to UW, I got my B.S. in Computer Engineering from the University of Illinois Urbana-Champaign, where I worked with [Prof. Paris Smaragdis](https://paris.cs.illinois.edu/) and [Prof. Mark Hasegawa-Johnson](https://speechtechnology.web.illinois.edu/mark-a-hasegawa-johnson/).
 
-Here's my [CV](/assets/pdf/JunkaiWu_Resume_202311.pdf). My email address is "junkaiwu [@] uw [dot] edu".
+Here's my [CV](/assets/pdf/JunkaiWu_Resume_202311.pdf) and my email address is "junkaiwu [@] uw [dot] edu".
 
