@@ -15,8 +15,12 @@ date-column rhythm as the news list. Pass `items` as a _data array of
           {{ item.title }}
         {%- endif -%}
       </div>
-      {%- if item.org %}
-      <div class="entry-org">{{ item.org }}</div>
+      {%- if item.org or item.location %}
+      <div class="entry-org">
+        {{- item.org -}}
+        {%- if item.org and item.location %}<span class="entry-sep">&middot;</span>{% endif -%}
+        {%- if item.location %}<span class="entry-location">{{ item.location }}</span>{% endif -%}
+      </div>
       {%- endif %}
       {%- if item.note %}
       <div class="entry-note">{{ item.note }}</div>

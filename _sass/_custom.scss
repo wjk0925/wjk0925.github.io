@@ -537,6 +537,15 @@ progress,
   color: var(--global-text-color-light);
 }
 
+.entry-sep {
+  margin: 0 0.4rem;
+  color: var(--global-divider-strong);
+}
+
+.entry-location {
+  white-space: nowrap;
+}
+
 .entry-note {
   margin-top: 0.18rem;
   font-size: 0.895rem;
@@ -785,6 +794,26 @@ progress,
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--global-text-color-light);
+}
+
+// A small aside under a page header. Kept out of `page.description`, which
+// is injected into meta tag attributes and so must stay plain text.
+.page-aside {
+  margin-top: -1.6rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--global-theme-color);
+    text-underline-offset: 0.18em;
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
 }
 
 /* -------------------------------------------------------------------------- *
