@@ -154,6 +154,34 @@ progress,
   top: 55px;
 }
 
+// Collapsed (mobile) menu: the sliding underline makes no sense on
+// full-width stacked rows, so fall back to a plain accent colour.
+@media (max-width: 575.98px) {
+  .navbar .navbar-collapse {
+    padding-bottom: 0.5rem;
+  }
+
+  .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+    margin: 0;
+    padding: 0.4rem 0;
+    font-size: 1rem;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .toggle-container {
+    justify-content: flex-end;
+    margin-left: 0;
+    padding-top: 0.2rem;
+  }
+
+  #light-toggle {
+    margin-right: -0.35rem;
+  }
+}
+
 /* -------------------------------------------------------------------------- *
  * Section headings
  *
@@ -697,6 +725,36 @@ footer.sticky-bottom {
       text-decoration-color: var(--global-theme-color);
     }
   }
+}
+
+// Keep the footer at the bottom of the viewport on short pages.
+body.sticky-bottom-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  > .container {
+    flex: 1 0 auto;
+  }
+
+  > footer.sticky-bottom {
+    flex-shrink: 0;
+  }
+}
+
+/* -------------------------------------------------------------------------- *
+ * Focus states
+ * -------------------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.hero-link:focus-visible,
+.publications ol.bibliography li .links a.btn:focus-visible {
+  outline-offset: 3px;
 }
 
 /* -------------------------------------------------------------------------- *
