@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started my research internship with the Music AI Group at [Adobe Research](https://research.adobe.com/) in San Francisco, CA!
+Started my research internship with the Music AI Group at [Adobe](https://research.adobe.com/).
