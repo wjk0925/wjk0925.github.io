@@ -37,6 +37,6 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-Hi! My name is Junkai Wu. I'm a third year Ph.D. student in the [Department of Electrical & Computer Engineering](https://www.ece.uw.edu/) at the [University of Washington](https://www.washington.edu/), advised by [Prof. Mari Ostendorf](https://people.ece.uw.edu/ostendorf/). My research is on <span class="hl">audio and multimodal LLMs</span> — both as end-to-end models that understand and generate **speech, music, and sound**, and as components that improve larger audio systems.
+Hi! My name is Junkai Wu. I'm a third year Ph.D. student in the [Department of Electrical & Computer Engineering](https://www.ece.uw.edu/) at the [University of Washington](https://www.washington.edu/), advised by [Prof. Mari Ostendorf](https://people.ece.uw.edu/ostendorf/). My research is on <span class="hl">audio-centric multimodal AI</span>, and especially on text and multimodal LLMs that understand and generate **speech, music, and sound**, either end to end or as components in larger systems.
 
 Before coming to UW, I got my B.S. in Computer Engineering from the [University of Illinois Urbana-Champaign](https://ece.illinois.edu/), where I worked on audio processing with [Prof. Paris Smaragdis](https://www.mit.edu/~paris/) and speech processing with [Prof. Mark Hasegawa-Johnson](https://speechtechnology.web.illinois.edu/mark-a-hasegawa-johnson/).
