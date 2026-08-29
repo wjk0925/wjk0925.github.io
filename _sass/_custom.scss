@@ -239,14 +239,17 @@ progress,
   grid-template-columns: minmax(0, 1fr);
   gap: 1.9rem;
   align-items: start;
-  margin-top: 1.4rem;
-  margin-bottom: 2.2rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.6rem;
 }
 
 @media (min-width: 640px) {
   .hero {
-    grid-template-columns: minmax(0, 1fr) 15rem;
+    grid-template-columns: minmax(0, 1fr) 13.5rem;
     gap: 2.6rem;
+    // Centre the text against the portrait so its extra height is split
+    // above and below, rather than dumped under the link row.
+    align-items: center;
   }
 }
 
@@ -365,7 +368,7 @@ progress,
   .hero-photo {
     order: 0;
     justify-self: end;
-    max-width: 15rem;
+    max-width: 13.5rem;
   }
 }
 
