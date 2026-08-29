@@ -1,0 +1,742 @@
+/*******************************************************************************
+ * Site design layer.
+ *
+ * Loaded last, so it refines the stock al-folio styles rather than forking
+ * them. Everything here is driven by the tokens in `_themes.scss`, so the
+ * light (white / Husky Purple) and dark (black / Husky Gold) themes stay in
+ * sync automatically.
+ ******************************************************************************/
+
+/* -------------------------------------------------------------------------- *
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+body {
+  font-family: $font-sans;
+  font-size: 1rem;
+  line-height: 1.68;
+  letter-spacing: -0.003em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+
+  // A single soft wash of the accent colour behind the top of the page.
+  background-image: radial-gradient(
+    62rem 26rem at 50% -8rem,
+    var(--global-page-wash),
+    transparent 70%
+  );
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-serif;
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  line-height: 1.22;
+}
+
+p {
+  margin-bottom: 1.05rem;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+::selection {
+  background: var(--global-accent-wash-strong);
+}
+
+/* -------------------------------------------------------------------------- *
+ * Navbar
+ * -------------------------------------------------------------------------- */
+
+.navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  opacity: 1;
+  background-color: var(--global-nav-bg);
+  border-bottom: 1px solid var(--global-divider-color);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+}
+
+.navbar.navbar-light {
+  .navbar-brand {
+    font-family: $font-serif;
+    font-size: 1.18rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--global-text-color);
+
+    .font-weight-bold {
+      font-weight: 600 !important;
+    }
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    position: relative;
+    margin: 0 0.15rem;
+    padding: 0.3rem 0.55rem;
+    font-size: 0.925rem;
+    font-weight: 450;
+    color: var(--global-text-color-light);
+    transition: color 0.18s ease;
+
+    // Understated underline that grows out from the centre.
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0.55rem;
+      right: 0.55rem;
+      bottom: 0.05rem;
+      height: 1.5px;
+      background: var(--global-theme-color);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    &:hover {
+      color: var(--global-text-color);
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .navbar-nav .nav-item.active > .nav-link {
+    font-weight: 550;
+    color: var(--global-theme-color);
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-left: 0.55rem;
+}
+
+#light-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+  transition: color 0.18s ease, background-color 0.18s ease;
+
+  i {
+    padding: 0 !important;
+    margin: 0;
+  }
+
+  &:hover {
+    color: var(--global-theme-color);
+    background-color: var(--global-accent-wash);
+  }
+}
+
+progress,
+.progress-container {
+  top: 55px;
+}
+
+/* -------------------------------------------------------------------------- *
+ * Section headings
+ *
+ * A quiet uppercase label with an accent tick and a hairline that runs to the
+ * end of the measure — used for "news", "selected publications", etc.
+ * -------------------------------------------------------------------------- */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 3.4rem 0 1.5rem;
+  font-family: $font-sans;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--global-theme-color);
+
+  &::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 1.1rem;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--global-theme-color);
+  }
+
+  &::after {
+    content: "";
+    flex: 1 1 auto;
+    height: 1px;
+    background: var(--global-divider-color);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.18s ease;
+
+    &:hover {
+      color: var(--global-theme-color-soft);
+      text-decoration: none;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- *
+ * About page hero
+ * -------------------------------------------------------------------------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.9rem;
+  align-items: start;
+  margin-top: 1.4rem;
+  margin-bottom: 2.2rem;
+}
+
+@media (min-width: 640px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 15rem;
+    gap: 2.6rem;
+  }
+}
+
+.hero-name {
+  margin: 0;
+  font-family: $font-serif;
+  font-size: clamp(2.5rem, 7vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+
+  .surname {
+    font-weight: 600;
+  }
+}
+
+.hero-subtitle {
+  margin: 0.85rem 0 0;
+  max-width: 46ch;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--global-text-color-light);
+
+  a {
+    color: var(--global-text-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--global-divider-strong);
+    transition: color 0.18s ease, border-color 0.18s ease;
+
+    &:hover {
+      color: var(--global-theme-color);
+      border-bottom-color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+}
+
+// Pill links: CV, email, Scholar, GitHub, …
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--global-divider-strong);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--global-text-color);
+  background: transparent;
+  transition: color 0.18s ease, background-color 0.18s ease,
+    border-color 0.18s ease, transform 0.18s ease;
+
+  i {
+    font-size: 0.85em;
+    color: var(--global-text-color-light);
+    transition: color 0.18s ease;
+  }
+
+  &:hover {
+    color: var(--global-hover-text-color);
+    background-color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    text-decoration: none;
+    transform: translateY(-1px);
+
+    i {
+      color: var(--global-hover-text-color);
+    }
+  }
+}
+
+.hero-link--primary {
+  color: var(--global-hover-text-color);
+  background-color: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+
+  i {
+    color: var(--global-hover-text-color);
+  }
+
+  &:hover {
+    background-color: var(--global-theme-color-soft);
+    border-color: var(--global-theme-color-soft);
+  }
+}
+
+// Portrait: soft card with an accent shadow rather than a hard border.
+.hero-photo {
+  order: -1;
+  justify-self: start;
+  width: 100%;
+  max-width: 9.5rem;
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    box-shadow:
+      0 0 0 1px var(--global-divider-color),
+      0 18px 40px -18px var(--global-shadow);
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-photo {
+    order: 0;
+    justify-self: end;
+    max-width: 15rem;
+  }
+}
+
+// Body copy of the bio, set a touch larger than the default measure.
+.hero-bio {
+  max-width: 68ch;
+  font-size: 1.02rem;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  // Inline links read as body text with an accent rule underneath, so a
+  // paragraph full of them still reads as a paragraph.
+  a {
+    color: var(--global-text-color);
+    text-decoration: underline;
+    text-decoration-color: var(--global-theme-color);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    transition: color 0.18s ease, background-color 0.18s ease;
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- *
+ * News
+ * -------------------------------------------------------------------------- */
+
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.15rem 1.4rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--global-divider-color);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .news-item {
+    grid-template-columns: 6.6rem minmax(0, 1fr);
+    align-items: baseline;
+  }
+}
+
+.news-date {
+  font-family: $font-mono;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--global-text-color-light);
+  white-space: nowrap;
+}
+
+.news-body {
+  font-size: 0.955rem;
+  line-height: 1.55;
+
+  a {
+    color: var(--global-text-color);
+    text-decoration: underline;
+    text-decoration-color: var(--global-theme-color);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    transition: color 0.18s ease;
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
+}
+
+.news-scroll {
+  max-height: 22rem;
+  overflow-y: auto;
+  // Fade the overflow edge instead of showing a hard cut.
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 2rem), transparent);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 calc(100% - 2rem),
+    transparent
+  );
+}
+
+.news-empty {
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+}
+
+/* -------------------------------------------------------------------------- *
+ * Publications
+ * -------------------------------------------------------------------------- */
+
+.publications {
+  margin-top: 0;
+
+  h2.bibliography {
+    margin: 1.9rem 0 0.4rem;
+    padding-top: 1.3rem;
+    border-top: 1px solid var(--global-divider-color);
+    text-align: left;
+    font-family: $font-mono;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--global-text-color-light);
+
+    &:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    span {
+      font-size: inherit;
+    }
+  }
+
+  ol.bibliography li {
+    position: relative;
+    margin-bottom: 0;
+    padding: 1.05rem 1rem 1.05rem 1.1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+
+    // Accent rule that fades in on hover.
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.15rem;
+      bottom: 1.15rem;
+      width: 2px;
+      border-radius: 1px;
+      background: var(--global-theme-color);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    &:hover {
+      background-color: var(--global-accent-wash);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    // Venue / award chips above the title.
+    .pub-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.42rem;
+    }
+
+    .pub-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.12rem 0.5rem;
+      border-radius: 4px;
+      font-family: $font-sans;
+      font-size: 0.665rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pub-tag--venue {
+      color: var(--global-theme-color);
+      background: var(--global-accent-wash-strong);
+
+      &:hover {
+        color: var(--global-hover-text-color);
+        background: var(--global-theme-color);
+        text-decoration: none;
+      }
+    }
+
+    .pub-tag--award {
+      color: var(--global-text-color);
+      background: transparent;
+      box-shadow: inset 0 0 0 1px var(--global-divider-strong);
+
+      &::before {
+        content: "\2605"; // ★
+        margin-right: 0.35rem;
+        color: var(--global-theme-color);
+        letter-spacing: 0;
+      }
+    }
+
+    .title {
+      font-family: $font-serif;
+      font-size: 1.14rem;
+      font-weight: 500;
+      line-height: 1.34;
+      letter-spacing: -0.012em;
+      color: var(--global-text-color);
+    }
+
+    .author {
+      margin-top: 0.28rem;
+      font-size: 0.895rem;
+      line-height: 1.5;
+      color: var(--global-text-color-light);
+
+      a {
+        color: var(--global-text-color-light);
+        border-bottom: 1px dashed var(--global-divider-strong);
+
+        &:hover {
+          color: var(--global-theme-color);
+          border-bottom-color: var(--global-theme-color);
+          border-bottom-style: solid;
+        }
+      }
+
+      > em {
+        font-style: normal;
+        font-weight: 600;
+        color: var(--global-text-color);
+        border-bottom: 0;
+      }
+    }
+
+    .periodical {
+      font-size: 0.855rem;
+      line-height: 1.5;
+      color: var(--global-text-color-light);
+
+      em {
+        font-style: italic;
+      }
+
+      &:empty {
+        display: none;
+      }
+    }
+
+    .links {
+      margin-top: 0.6rem;
+
+      a.btn {
+        margin: 0 0.35rem 0.35rem 0;
+        padding: 0.22rem 0.75rem;
+        border: 1px solid var(--global-divider-strong);
+        border-radius: 999px;
+        background: transparent;
+        box-shadow: none;
+        font-family: $font-sans;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--global-text-color-light);
+        transition: color 0.18s ease, background-color 0.18s ease,
+          border-color 0.18s ease;
+
+        &:hover {
+          color: var(--global-hover-text-color);
+          background-color: var(--global-theme-color);
+          border-color: var(--global-theme-color);
+          box-shadow: none;
+        }
+      }
+    }
+
+    .hidden {
+      p, pre {
+        border-radius: 8px;
+      }
+    }
+
+    .abstract.hidden.open,
+    .bibtex.hidden.open {
+      margin-top: 0.6rem;
+      border-left: 2px solid var(--global-divider-strong);
+    }
+  }
+}
+
+// "selected publications" on the about page needs no year headers.
+.about-page .publications ol.bibliography li {
+  padding-top: 0.95rem;
+  padding-bottom: 0.95rem;
+}
+
+/* -------------------------------------------------------------------------- *
+ * Generic page headers (publications, projects, …)
+ * -------------------------------------------------------------------------- */
+
+.post-header {
+  margin-top: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
+.post-title {
+  font-family: $font-serif;
+  font-size: clamp(2.1rem, 5.5vw, 2.8rem);
+  font-weight: 500;
+  letter-spacing: -0.026em;
+  line-height: 1.08;
+}
+
+.post-description {
+  margin-top: 0.7rem;
+  margin-bottom: 0;
+  max-width: 62ch;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+}
+
+/* -------------------------------------------------------------------------- *
+ * Footer
+ * -------------------------------------------------------------------------- */
+
+footer.sticky-bottom {
+  margin-top: 4.5rem;
+  padding-top: 1.8rem;
+  padding-bottom: 2.6rem;
+  border-top: 1px solid var(--global-divider-color);
+  font-size: 0.795rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+
+  .container {
+    color: inherit;
+  }
+
+  a {
+    color: var(--global-text-color-light);
+    text-decoration: underline;
+    text-decoration-color: var(--global-divider-strong);
+
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration-color: var(--global-theme-color);
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- *
+ * Misc. cleanups
+ * -------------------------------------------------------------------------- */
+
+.social {
+  margin-top: 2.6rem;
+
+  .contact-icons {
+    font-size: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.1rem;
+
+    a i::before {
+      color: var(--global-text-color-light);
+    }
+  }
+
+  .contact-note {
+    margin-top: 0.8rem;
+    color: var(--global-text-color-light);
+  }
+}
+
+blockquote {
+  border-left-width: 2px;
+  background: var(--global-accent-wash);
+  border-radius: 0 8px 8px 0;
+  font-size: 1rem;
+}
+
+code {
+  border-radius: 4px;
+  padding: 0.12em 0.35em;
+}
+
+img,
+figure {
+  max-width: 100%;
+}

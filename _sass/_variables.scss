@@ -17,25 +17,51 @@ $green-color-dark:    #009f06 !default;
 $green-color-light:   #ddffdd !default;
 $green-color-bright:  #11D68B !default;
 $purple-color:        #B509AC !default;
-$uw-color:            #4b2e83 !default; 
-$uw-gold-color:       #85754d !default;
 $light-purple-color:  lighten($purple-color, 25%);
 $pink-color:          #f92080 !default;
 $pink-color-light:    #ffdddd !default;
 $yellow-color:        #efcc00 !default;
+
+// University of Washington palette
+// https://www.washington.edu/brand/graphic-elements/primary-color-palette/
+$uw-purple:           #4b2e83 !default;  // Husky Purple
+$uw-purple-light:     #6c4fa8 !default;  // lifted purple, for dark-on-light hovers
+$uw-gold:             #b7a57a !default;  // Husky Gold
+$uw-gold-light:       #d7cba6 !default;  // lifted gold, for hovers on black
+$uw-gold-metallic:    #85754d !default;  // Metallic Gold
+
+// Backwards-compatible aliases (used elsewhere in the theme)
+$uw-color:            $uw-purple !default;
+$uw-gold-color:       $uw-gold !default;
 
 $grey-color:          #828282 !default;
 $grey-color-light:    lighten($grey-color, 40%);
 $grey-color-dark:     #1C1C1D;
 $grey-900:            #212529;
 
+// Neutrals tuned for this site: warm-ish near-black on white,
+// true black canvas in dark mode.
+$ink-color:           #17151c !default;  // primary text, light mode
+$ink-muted-color:     #6a6472 !default;  // secondary text, light mode
+$paper-color:         #ffffff !default;
+
+$night-color:         #0a0a0b !default;  // page canvas, dark mode
+$night-surface-color: #141416 !default;  // raised surface, dark mode
+$night-text-color:    #e9e7e3 !default;
+$night-muted-color:   #a6a096 !default;
+
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
 // Theme colors
 
-$code-bg-color-light:     rgba($purple-color, 0.05);
-$code-bg-color-dark:      #2c3237 !default;
+$code-bg-color-light:     rgba($uw-purple, 0.06);
+$code-bg-color-dark:      #17171a !default;
+
+// Typography
+$font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+$font-serif: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+$font-mono:  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 
 // Font awesome location
 $fa-font-path: "../webfonts";

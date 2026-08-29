@@ -31,6 +31,22 @@
 
         <!-- Entry bib key -->
         <div id="{{entry.key}}" class="{% if site.enable_publication_thumbnails %}col-sm-10{% else %}col-sm-12{% endif %}">
+        <!-- Venue / award chips -->
+        {%- if entry.abbr or entry.award %}
+        <div class="pub-tags">
+          {%- if entry.abbr -%}
+            {%- assign venue = site.data.venues[entry.abbr] -%}
+            {%- if venue and venue.url -%}
+            <a class="pub-tag pub-tag--venue" href="{{ venue.url }}">{{ entry.abbr }}</a>
+            {%- else -%}
+            <span class="pub-tag pub-tag--venue">{{ entry.abbr }}</span>
+            {%- endif -%}
+          {%- endif -%}
+          {%- if entry.award -%}
+          <span class="pub-tag pub-tag--award">{{ entry.award }}</span>
+          {%- endif -%}
+        </div>
+        {%- endif %}
         <!-- Title -->
         <div class="title">{{entry.title}}</div>
         <!-- Author -->
