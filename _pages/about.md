@@ -29,12 +29,15 @@ quick_links:
     url: https://www.linkedin.com/in/junkai-wu-19015b198
     icon: fab fa-linkedin
 
+experience: true # includes the experience list from _data/experience.yml
+education: true  # includes the education list from _data/education.yml
+teaching: true   # includes the teaching list from _data/teaching.yml
 news: true  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-Hi! My name is Junkai Wu. I'm a third year Ph.D. student in the [Department of Electrical & Computer Engineering](https://www.ece.uw.edu/) at the [University of Washington](https://www.washington.edu/), advised by [Prof. Mari Ostendorf](https://people.ece.uw.edu/ostendorf/). My research is on models that understand and generate speech, sound, and music, across audio, language, and vision.
+Hi! My name is Junkai Wu. I'm a third year Ph.D. student in the [Department of Electrical & Computer Engineering](https://www.ece.uw.edu/) at the [University of Washington](https://www.washington.edu/), advised by [Prof. Mari Ostendorf](https://people.ece.uw.edu/ostendorf/). My research is on models that understand and generate speech, sound, and music, across audio, language, and vision. This summer I'm interning with the Music AI Group at [Adobe Research](https://research.adobe.com/), working on audio–text alignment for music generation.
 
 Before coming to UW, I got my B.S. in Computer Engineering from the [University of Illinois Urbana-Champaign](https://ece.illinois.edu/), where I worked on audio and speech processing with [Prof. Paris Smaragdis](https://paris.cs.illinois.edu/) and [Prof. Mark Hasegawa-Johnson](https://speechtechnology.web.illinois.edu/mark-a-hasegawa-johnson/).

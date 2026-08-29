@@ -86,6 +86,24 @@ layout: default
       {%- include selected_papers.html %}
     {%- endif %}
 
+    <!-- Experience -->
+    {% if page.experience and site.data.experience -%}
+      <h2 class="section-heading">experience</h2>
+      {%- include entry_list.html items=site.data.experience %}
+    {%- endif %}
+
+    <!-- Education -->
+    {% if page.education and site.data.education -%}
+      <h2 class="section-heading">education</h2>
+      {%- include entry_list.html items=site.data.education %}
+    {%- endif %}
+
+    <!-- Teaching -->
+    {% if page.teaching and site.data.teaching -%}
+      <h2 class="section-heading"><a href="{{ '/teaching/' | relative_url }}">teaching</a></h2>
+      {%- include entry_list.html items=site.data.teaching %}
+    {%- endif %}
+
     <!-- Social -->
     {%- if page.social %}
       <div class="social">

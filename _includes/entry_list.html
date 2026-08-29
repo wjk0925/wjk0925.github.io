@@ -1,0 +1,27 @@
+{%- comment -%}
+Renders a dated list (education, experience, teaching) sharing the same
+date-column rhythm as the news list. Pass `items` as a _data array of
+{ date, title, org, note, url } maps.
+{%- endcomment -%}
+<ul class="entry-list">
+  {%- for item in include.items %}
+  <li class="entry-item">
+    <div class="entry-date">{{ item.date }}</div>
+    <div class="entry-body">
+      <div class="entry-title">
+        {%- if item.url -%}
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        {%- else -%}
+          {{ item.title }}
+        {%- endif -%}
+      </div>
+      {%- if item.org %}
+      <div class="entry-org">{{ item.org }}</div>
+      {%- endif %}
+      {%- if item.note %}
+      <div class="entry-note">{{ item.note }}</div>
+      {%- endif %}
+    </div>
+  </li>
+  {%- endfor %}
+</ul>

@@ -418,7 +418,7 @@ progress,
 
 @media (min-width: 576px) {
   .news-item {
-    grid-template-columns: 6.6rem minmax(0, 1fr);
+    grid-template-columns: 7.4rem minmax(0, 1fr);
     align-items: baseline;
   }
 }
@@ -466,6 +466,82 @@ progress,
 .news-empty {
   color: var(--global-text-color-light);
   font-size: 0.95rem;
+}
+
+/* -------------------------------------------------------------------------- *
+ * Entry lists: experience, education, teaching
+ *
+ * Same date-column rhythm as the news list, so the whole page lines up.
+ * -------------------------------------------------------------------------- */
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.2rem 1.4rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--global-divider-color);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .entry-item {
+    grid-template-columns: 7.4rem minmax(0, 1fr);
+  }
+}
+
+.entry-date {
+  font-family: $font-mono;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.9;
+  color: var(--global-text-color-light);
+  white-space: nowrap;
+}
+
+.entry-title {
+  font-size: 1rem;
+  font-weight: 550;
+  line-height: 1.4;
+  color: var(--global-text-color);
+}
+
+.entry-org {
+  font-size: 0.925rem;
+  line-height: 1.45;
+  color: var(--global-text-color-light);
+}
+
+.entry-note {
+  margin-top: 0.18rem;
+  font-size: 0.895rem;
+  line-height: 1.5;
+  color: var(--global-text-color-light);
+}
+
+.entry-body {
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--global-theme-color);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    transition: color 0.18s ease;
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
 }
 
 /* -------------------------------------------------------------------------- *
