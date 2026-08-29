@@ -21,7 +21,7 @@ class: photography-page
   <div class="photo-grid">
     {%- assign current_month = photo.month -%}
   {%- endif %}
-    <figure class="photo{% if photo.panorama %} photo--wide{% endif %}">
+    <figure class="photo" style="--ar: {{ photo.ar }}">
       <img
         src="{{ '/assets/img/photography/' | append: photo.id | append: '.jpg' | relative_url }}"
         data-zoom-src="{{ '/assets/img/photography/' | append: photo.id | append: '_full.jpg' | relative_url }}"

@@ -817,11 +817,9 @@ progress,
   }
 }
 
-// Closing note at the foot of the about page.
+// Closing note at the foot of the about page, under the "misc" heading.
 .about-closing {
-  margin-top: 3.2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--global-divider-color);
+  margin: 0;
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--global-text-color-light);
@@ -861,31 +859,33 @@ progress,
   }
 }
 
+// Justified rows. Each photo's flex basis is proportional to its aspect
+// ratio, so photos sharing a row land on the same height and the row fills
+// the width exactly — no holes, whatever mix of shapes a month contains.
+// `--ar` (width / height) comes from the data file.
 .photo-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.9rem 1.1rem;
   margin-bottom: 0.5rem;
-  align-items: start;
-}
-
-@media (min-width: 700px) {
-  .photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    // Let a half-width photo backfill the hole a panorama leaves behind.
-    grid-auto-flow: dense;
-  }
-
-  // Panoramas are unreadable in a half-width column.
-  .photo--wide {
-    grid-column: 1 / -1;
-  }
+  // Only matters for a row the max-width ceiling stops from filling —
+  // splitting that slack either side reads better than a hole on the right.
+  justify-content: center;
 }
 
 .photo {
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  // Grow AND basis both scale with the aspect ratio, so final widths stay
+  // proportional to it and every photo in a row lands on the same height.
+  // Grow is scaled by 100: when the grow factors on a line sum to less
+  // than 1, flexbox hands out only that fraction of the free space, so a
+  // lone portrait (ratio ~0.67) would stop short of the full width.
+  flex-grow: calc(var(--ar, 1.5) * 100);
+  flex-shrink: 1;
+  flex-basis: calc(var(--ar, 1.5) * 15rem);
+  // Ceiling on row height (44rem), so a lone photo cannot balloon.
+  max-width: min(100%, calc(var(--ar, 1.5) * 44rem));
+  min-width: 0;
 
   img {
     width: 100%;
@@ -905,6 +905,14 @@ progress,
     box-shadow:
       0 0 0 1px var(--global-divider-strong),
       0 16px 34px -16px var(--global-shadow);
+  }
+}
+
+// One photo per row on phones: two side by side would be too small to read.
+@media (max-width: 699px) {
+  .photo {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 }
 
@@ -937,6 +945,13 @@ progress,
   border-radius: 0 !important;
   box-shadow: none !important;
   transform: none !important;
+  // The fixed navbar sits at z-index 1030 and would otherwise cover the
+  // top of a zoomed photo; medium-zoom defaults to 100/101.
+  z-index: 1041 !important;
+}
+
+.medium-zoom-overlay {
+  z-index: 1040 !important;
 }
 
 /* -------------------------------------------------------------------------- *
