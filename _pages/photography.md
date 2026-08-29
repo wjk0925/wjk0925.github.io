@@ -2,12 +2,13 @@
 layout: page
 permalink: /photography/
 title: photography
-description: Some photos I have taken, newest first.
+description: Photographs I take outside of research.
 nav: true
 nav_order: 2
 class: photography-page
 ---
 
+{% if site.photography_released %}
 {%- assign photos = site.data.photography -%}
 {%- assign current_month = "" -%}
 
@@ -57,3 +58,11 @@ class: photography-page
 </div>
 
 <script src="{{ '/assets/js/lightbox.js' | relative_url | bust_file_cache }}" defer></script>
+{% else %}
+
+<div class="construction">
+  <p class="construction-title">Under construction</p>
+  <p class="construction-note">I'm still working on how these are laid out. Photos will go up here once it's ready.</p>
+</div>
+
+{% endif %}

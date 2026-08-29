@@ -971,6 +971,32 @@ progress,
   }
 }
 
+// Shown at /photography/ while `photography_released` is false.
+.construction {
+  margin: 3.5rem 0 5rem;
+  padding: 2.4rem 0;
+  border-top: 1px solid var(--global-divider-color);
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.construction-title {
+  margin: 0 0 0.5rem;
+  font-family: $font-sans;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--global-theme-color);
+}
+
+.construction-note {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+}
+
 /* -------------------------------------------------------------------------- *
  * Lightbox
  * -------------------------------------------------------------------------- */

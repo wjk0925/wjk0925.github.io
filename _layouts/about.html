@@ -104,8 +104,8 @@ layout: default
       {%- include entry_list.html items=site.data.teaching %}
     {%- endif %}
 
-    <!-- Misc -->
-    {%- if page.closing %}
+    <!-- Misc: points at the photography page, so it waits on the same switch -->
+    {%- if page.closing and site.photography_released %}
     <h2 class="section-heading">misc</h2>
     <p class="about-closing">{{ page.closing }}</p>
     {%- endif %}
