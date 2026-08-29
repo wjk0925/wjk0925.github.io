@@ -7,6 +7,7 @@
   date: "2026-08-27"
   month: "2026-08"
   month_label: "August 2026"
+  month_cols: 3
   device: "Canon R6 Mark II"
   location: "Sausalito, California, USA"
   description: "飞机和挡住月亮的云"
@@ -18,6 +19,7 @@
   date: "2026-08-13"
   month: "2026-08"
   month_label: "August 2026"
+  month_cols: 3
   device: "Canon R6 Mark II"
   location: "Patterson, California, USA"
   description: "Perseids and Milky Way (?)"
@@ -29,6 +31,7 @@
   date: "2026-08-13"
   month: "2026-08"
   month_label: "August 2026"
+  month_cols: 3
   device: "Canon R6 Mark II"
   location: "Patterson, California, USA"
   description: "Perseids and Andromeda Galaxy (?)"
@@ -40,6 +43,7 @@
   date: "2026-07-28"
   month: "2026-07"
   month_label: "July 2026"
+  month_cols: 3
   device: "iPhone 17 Pro"
   location: "Santa Clara, California, USA"
   description: "Exit to the moon (操作系统学得好的同学可以登月)"
@@ -51,6 +55,7 @@
   date: "2026-07-12"
   month: "2026-07"
   month_label: "July 2026"
+  month_cols: 3
   device: "Canon R6 Mark II"
   location: "New York City, New York, USA"
   width: 4000
@@ -61,6 +66,7 @@
   date: "2026-07-12"
   month: "2026-07"
   month_label: "July 2026"
+  month_cols: 3
   device: "Canon R6 Mark II"
   location: "New York City, New York, USA"
   description: "Manhattanhenge但人太多了"
@@ -72,6 +78,7 @@
   date: "2026-06-17"
   month: "2026-06"
   month_label: "June 2026"
+  month_cols: 2
   device: "iPhone 17 Pro"
   location: "Medford, Oregon, USA"
   description: "PUSH BUTTON FOR the HUMAN BEAN!"
@@ -83,6 +90,7 @@
   date: "2026-06-03"
   month: "2026-06"
   month_label: "June 2026"
+  month_cols: 2
   device: "Canon R6 Mark II"
   location: "Denali National Park, Alaska, USA"
   description: "30% CLUB!"
@@ -94,6 +102,7 @@
   date: "2026-03-21"
   month: "2026-03"
   month_label: "March 2026"
+  month_cols: 2
   device: "Canon R6 Mark II"
   location: "Seattle, Washington, USA"
   description: "# cloud"
@@ -105,6 +114,7 @@
   date: "2026-03-21"
   month: "2026-03"
   month_label: "March 2026"
+  month_cols: 2
   device: "Canon R6 Mark II"
   location: "Seattle, Washington, USA"
   description: "Cherry blossoms at Ferdinand Street Hand Carry Boat Launch"
@@ -116,6 +126,7 @@
   date: "2026-03-19"
   month: "2026-03"
   month_label: "March 2026"
+  month_cols: 2
   device: "iPhone 17 Pro"
   location: "Seattle, Washington, USA"
   description: "秒速五英里(?)"
@@ -127,6 +138,7 @@
   date: "2026-03-11"
   month: "2026-03"
   month_label: "March 2026"
+  month_cols: 2
   device: "iPhone 17 Pro"
   location: "Seattle, Washington, USA"
   description: "西雅图中国城备战世界杯"
@@ -138,6 +150,7 @@
   date: "2026-02-24"
   month: "2026-02"
   month_label: "February 2026"
+  month_cols: 1
   device: "Canon R6 Mark II"
   location: "Seattle, Washington, USA"
   description: "UW campus, shot from ECEB"
@@ -149,6 +162,7 @@
   date: "2026-01-20"
   month: "2026-01"
   month_label: "January 2026"
+  month_cols: 2
   device: "iPhone 17 Pro"
   location: "Seattle, Washington, USA"
   description: "蛾眉月 #2"
@@ -160,6 +174,7 @@
   date: "2026-01-20"
   month: "2026-01"
   month_label: "January 2026"
+  month_cols: 2
   device: "iPhone 17 Pro"
   location: "Seattle, Washington, USA"
   description: "蛾眉月"
@@ -171,6 +186,7 @@
   date: "2024-11-29"
   month: "2024-11"
   month_label: "November 2024"
+  month_cols: 2
   device: "Canon R6 Mark II"
   location: "Tokyo, Japan"
   description: "圣地巡礼"
@@ -182,6 +198,7 @@
   date: "2024-11-28"
   month: "2024-11"
   month_label: "November 2024"
+  month_cols: 2
   device: "Canon R6 Mark II"
   location: "Kamakura, Kanagawa, Japan"
   width: 3781
@@ -192,6 +209,7 @@
   date: "2024-10-12"
   month: "2024-10"
   month_label: "October 2024"
+  month_cols: 2
   device: "Canon R6 Mark II"
   location: "Moclips, Washington, USA"
   description: "Another moon"
@@ -203,6 +221,7 @@
   date: "2024-10-12"
   month: "2024-10"
   month_label: "October 2024"
+  month_cols: 2
   device: "Canon R6 Mark II"
   location: "Moclips, Washington, USA"
   description: "Mocrocks Beach"
@@ -214,6 +233,7 @@
   date: "2024-07-04"
   month: "2024-07"
   month_label: "July 2024"
+  month_cols: 1
   device: "Canon R6 Mark II"
   location: "Seattle, Washington, USA"
   description: "Independence Day fireworks at Gas Works Park"
@@ -225,6 +245,7 @@
   date: "2024-01-14"
   month: "2024-01"
   month_label: "January 2024"
+  month_cols: 2
   device: "Canon R6 Mark II"
   location: "Tacoma, Washington, USA"
   description: "Mount Rainier"
@@ -236,6 +257,7 @@
   date: "2024-01-14"
   month: "2024-01"
   month_label: "January 2024"
+  month_cols: 2
   device: "Canon R6 Mark II"
   location: "Seattle, Washington, USA"
   width: 3401
@@ -246,6 +268,7 @@
   date: "2024-01-13"
   month: "2024-01"
   month_label: "January 2024"
+  month_cols: 2
   device: "Canon R6 Mark II"
   location: "Seattle, Washington, USA"
   width: 3979
@@ -256,6 +279,7 @@
   date: "2024-01-13"
   month: "2024-01"
   month_label: "January 2024"
+  month_cols: 2
   device: "Canon R6 Mark II"
   location: "Seattle, Washington, USA"
   description: "Another Space Needle"

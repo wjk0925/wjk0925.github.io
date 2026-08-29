@@ -842,13 +842,15 @@ progress,
  * Photography
  * -------------------------------------------------------------------------- */
 
-// The whole page — heading included — breaks out of the text measure, so
-// photographs get more room than body copy while staying left-aligned.
+// Near full-bleed: the gallery is the page here, so it takes the viewport
+// rather than the text measure.
+// Wider than the 880px text measure, but capped: past ~1400px the tiles
+// would start rendering larger than the source images are sharp for.
 .photography-page {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding-left: max(1.25rem, calc(50vw - 34rem));
-  padding-right: max(1.25rem, calc(50vw - 34rem));
+  margin-left: calc(50% - min(50vw, 43.75rem));
+  margin-right: calc(50% - min(50vw, 43.75rem));
+  padding-left: clamp(0.75rem, 3vw, 3rem);
+  padding-right: clamp(0.75rem, 3vw, 3rem);
 }
 
 .photo-page .section-heading {
@@ -859,99 +861,212 @@ progress,
   }
 }
 
-// Justified rows. Each photo's flex basis is proportional to its aspect
-// ratio, so photos sharing a row land on the same height and the row fills
-// the width exactly — no holes, whatever mix of shapes a month contains.
-// `--ar` (width / height) comes from the data file.
+// Uniform tiles: every cell is the same shape, so rows always close up and
+// no month can leave a hole, whatever mix of portraits and panoramas it has.
+// Fixed tracks, so every tile is the same size whatever a month contains.
+// A short month simply leaves its trailing tracks empty on the right.
 .photo-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.9rem 1.1rem;
+  display: grid;
+  // One across on phones: two would be ~170px wide, too small to read.
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
   margin-bottom: 0.5rem;
-  // Only matters for a row the max-width ceiling stops from filling —
-  // splitting that slack either side reads better than a hole on the right.
-  justify-content: center;
+  justify-content: start;
+}
+
+@media (min-width: 560px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 700px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .photo {
+  position: relative;
+  display: block;
+  width: 100%;
   margin: 0;
-  // Grow AND basis both scale with the aspect ratio, so final widths stay
-  // proportional to it and every photo in a row lands on the same height.
-  // Grow is scaled by 100: when the grow factors on a line sum to less
-  // than 1, flexbox hands out only that fraction of the free space, so a
-  // lone portrait (ratio ~0.67) would stop short of the full width.
-  flex-grow: calc(var(--ar, 1.5) * 100);
-  flex-shrink: 1;
-  flex-basis: calc(var(--ar, 1.5) * 15rem);
-  // Ceiling on row height (44rem), so a lone photo cannot balloon.
-  max-width: min(100%, calc(var(--ar, 1.5) * 44rem));
-  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--global-accent-wash);
+  cursor: zoom-in;
+  aspect-ratio: 3 / 2;
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-    border-radius: 8px;
-    background: var(--global-accent-wash);
-    box-shadow:
-      0 0 0 1px var(--global-divider-color),
-      0 10px 26px -16px var(--global-shadow);
-    cursor: zoom-in;
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  &:hover img {
-    transform: translateY(-2px);
-    box-shadow:
-      0 0 0 1px var(--global-divider-strong),
-      0 16px 34px -16px var(--global-shadow);
+  &:hover img,
+  &:focus-visible img {
+    transform: scale(1.04);
   }
 }
 
-// One photo per row on phones: two side by side would be too small to read.
-@media (max-width: 699px) {
-  .photo {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
-}
-
-.photo-caption {
-  margin-top: 0.7rem;
-  font-size: 0.85rem;
-  line-height: 1.5;
+// Caption rides over the bottom of the tile, only on hover/focus.
+.photo-hover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.2rem 0.75rem 0.6rem;
   text-align: left;
-  color: var(--global-text-color-light);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  pointer-events: none;
+}
+
+.photo:hover .photo-hover,
+.photo:focus-visible .photo-hover {
+  opacity: 1;
 }
 
 .photo-desc {
   display: block;
-  color: var(--global-text-color);
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #fff;
 }
 
 .photo-meta {
   display: block;
   margin-top: 0.1rem;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.82);
 }
 
-.photo-sep {
-  margin: 0 0.35em;
-  color: var(--global-divider-strong);
+// Touch devices have no hover, and the tap opens the full view anyway.
+@media (hover: none) {
+  .photo-hover {
+    display: none;
+  }
 }
 
-// medium-zoom lifts the image out of the grid; drop our own chrome then.
-.medium-zoom-image--opened {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  transform: none !important;
-  // The fixed navbar sits at z-index 1030 and would otherwise cover the
-  // top of a zoomed photo; medium-zoom defaults to 100/101.
-  z-index: 1041 !important;
+/* -------------------------------------------------------------------------- *
+ * Lightbox
+ * -------------------------------------------------------------------------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  // Above the fixed navbar, which sits at 1030.
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem 1rem;
+  background: rgba(8, 8, 10, 0.94);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  &.is-open {
+    opacity: 1;
+  }
+
+  &[hidden] {
+    display: none;
+  }
 }
 
-.medium-zoom-overlay {
-  z-index: 1040 !important;
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.lightbox-img {
+  max-width: min(96vw, 1800px);
+  // Leaves room for the caption underneath.
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.lightbox-caption {
+  max-width: min(96vw, 1100px);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.lightbox-desc {
+  display: block;
+  font-size: 0.98rem;
+  line-height: 1.45;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.lightbox-meta {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.18s ease;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.lightbox-close {
+  top: 0.6rem;
+  right: 1rem;
+  font-size: 2.3rem;
+  padding: 0.2rem 0.6rem;
+}
+
+.lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  padding: 0.5rem 1rem;
+}
+
+.lightbox-prev {
+  left: 0.25rem;
+}
+
+.lightbox-next {
+  right: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .lightbox-nav {
+    font-size: 2rem;
+    padding: 0.4rem 0.5rem;
+  }
 }
 
 /* -------------------------------------------------------------------------- *

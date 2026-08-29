@@ -21,21 +21,39 @@ class: photography-page
   <div class="photo-grid">
     {%- assign current_month = photo.month -%}
   {%- endif %}
-    <figure class="photo" style="--ar: {{ photo.ar }}">
+    <button type="button" class="photo"
+      data-index="{{ forloop.index0 }}"
+      data-full="{{ '/assets/img/photography/' | append: photo.id | append: '_full.jpg' | relative_url }}"
+      data-desc="{{ photo.description | default: '' | escape }}"
+      data-location="{{ photo.location | escape }}"
+      data-device="{{ photo.device | escape }}"
+      data-date="{{ photo.date }}"
+      aria-label="{{ photo.description | default: photo.location | escape }}">
       <img
         src="{{ '/assets/img/photography/' | append: photo.id | append: '.jpg' | relative_url }}"
-        data-zoom-src="{{ '/assets/img/photography/' | append: photo.id | append: '_full.jpg' | relative_url }}"
-        width="{{ photo.width }}" height="{{ photo.height }}"
-        style="aspect-ratio: {{ photo.width }} / {{ photo.height }}"
         alt="{{ photo.description | default: photo.location | escape }}"
-        loading="lazy" decoding="async" data-zoomable>
-      <figcaption class="photo-caption">
-        {%- if photo.description %}
-        <span class="photo-desc">{{ photo.description }}</span>
-        {%- endif %}
-        <span class="photo-meta">{{ photo.location }}<span class="photo-sep">&middot;</span>{{ photo.device }}</span>
-      </figcaption>
-    </figure>
+        loading="lazy" decoding="async">
+      <span class="photo-hover">
+        {%- if photo.description %}<span class="photo-desc">{{ photo.description }}</span>{% endif -%}
+        <span class="photo-meta">{{ photo.location }}</span>
+      </span>
+    </button>
 {%- endfor %}
   </div>
 </div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous">&#8249;</button>
+  <button class="lightbox-nav lightbox-next" type="button" aria-label="Next">&#8250;</button>
+  <figure class="lightbox-figure">
+    <img class="lightbox-img" alt="">
+    <figcaption class="lightbox-caption">
+      <span class="lightbox-desc"></span>
+      <span class="lightbox-meta"></span>
+    </figcaption>
+  </figure>
+</div>
+
+<script src="{{ '/assets/js/lightbox.js' | relative_url | bust_file_cache }}" defer></script>
