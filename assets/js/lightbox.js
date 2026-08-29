@@ -8,7 +8,6 @@
 
   const tiles = Array.from(document.querySelectorAll('.photo'));
   const img = box.querySelector('.lightbox-img');
-  const desc = box.querySelector('.lightbox-desc');
   const meta = box.querySelector('.lightbox-meta');
   let index = -1;
   let lastFocus = null;
@@ -29,9 +28,6 @@
     const t = tiles[i];
     img.src = t.dataset.full;
     img.alt = t.querySelector('img').alt;
-    const d = t.dataset.desc || '';
-    desc.textContent = d;
-    desc.hidden = !d;
     meta.textContent = [t.dataset.location, t.dataset.device, prettyDate(t.dataset.date)]
       .filter(Boolean).join('  ·  ');
   }

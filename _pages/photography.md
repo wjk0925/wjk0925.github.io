@@ -32,6 +32,7 @@ class: photography-page
       <img
         src="{{ '/assets/img/photography/' | append: photo.id | append: '.jpg' | relative_url }}"
         alt="{{ photo.description | default: photo.location | escape }}"
+        width="{{ photo.width }}" height="{{ photo.height }}"
         loading="lazy" decoding="async">
       <span class="photo-hover">
         {%- if photo.description %}<span class="photo-desc">{{ photo.description }}</span>{% endif -%}
@@ -50,7 +51,6 @@ class: photography-page
   <figure class="lightbox-figure">
     <img class="lightbox-img" alt="">
     <figcaption class="lightbox-caption">
-      <span class="lightbox-desc"></span>
       <span class="lightbox-meta"></span>
     </figcaption>
   </figure>

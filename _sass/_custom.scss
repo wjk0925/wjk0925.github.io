@@ -863,33 +863,24 @@ progress,
 
 // Uniform tiles: every cell is the same shape, so rows always close up and
 // no month can leave a hole, whatever mix of portraits and panoramas it has.
-// Fixed tracks, so every tile is the same size whatever a month contains.
-// A short month simply leaves its trailing tracks empty on the right.
+// Photos run at one shared height and keep their own width, so nothing is
+// cropped and every row lines up along the top and bottom. Rows wrap and
+// stay left-aligned; a short month just leaves space on the right.
 .photo-grid {
-  display: grid;
-  // One across on phones: two would be ~170px wide, too small to read.
-  grid-template-columns: minmax(0, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 0.5rem;
-  justify-content: start;
-}
-
-@media (min-width: 560px) {
-  .photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 700px) {
-  .photo-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  align-items: flex-start;
 }
 
 .photo {
   position: relative;
   display: block;
-  width: 100%;
+  flex: 0 0 auto;
+  width: auto;
+  // The height cap: nothing renders larger than this, whatever its shape.
+  height: 19rem;
   margin: 0;
   padding: 0;
   border: 0;
@@ -897,19 +888,43 @@ progress,
   overflow: hidden;
   background: var(--global-accent-wash);
   cursor: zoom-in;
-  aspect-ratio: 3 / 2;
 
   img {
-    width: 100%;
-    height: 100%;
     display: block;
-    object-fit: cover;
+    height: 100%;
+    width: auto;
+    max-width: none;
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   &:hover img,
   &:focus-visible img {
-    transform: scale(1.04);
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 900px) {
+  .photo {
+    height: 14rem;
+  }
+}
+
+// Phones: one photo per row at full width, natural height. A panorama at a
+// fixed height would otherwise be wider than the screen.
+@media (max-width: 559px) {
+  .photo-grid {
+    display: block;
+  }
+
+  .photo {
+    height: auto;
+    width: 100%;
+    margin-bottom: 6px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
