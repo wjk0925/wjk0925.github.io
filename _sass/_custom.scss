@@ -378,6 +378,18 @@ progress,
     margin-bottom: 0;
   }
 
+  // Two levels of emphasis: `.hl` for the headline phrase (accent colour),
+  // plain **bold** for secondary phrases that should stay in body colour.
+  .hl {
+    font-weight: 600;
+    color: var(--global-theme-color);
+  }
+
+  strong {
+    font-weight: 600;
+    color: var(--global-text-color);
+  }
+
   // Inline links read as body text with an accent rule underneath, so a
   // paragraph full of them still reads as a paragraph.
   a {
