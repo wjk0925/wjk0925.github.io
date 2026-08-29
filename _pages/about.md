@@ -2,9 +2,8 @@
 layout: about
 title: about
 permalink: /
-subtitle: >
-  Ph.D. student in <a href="https://www.ece.uw.edu/">Electrical &amp; Computer Engineering</a>
-  at the <a href="https://www.washington.edu/">University of Washington</a>.
+subtitle: PhD Student at the University of Washington
+tagline: Audio &amp; Multimodal AI
 
 profile:
   align: right
@@ -36,6 +35,6 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-Hi! My name is Junkai Wu. I'm a third year Ph.D. student advised by [Prof. Mari Ostendorf](https://people.ece.uw.edu/ostendorf/), and my research interests are in audio, speech, and language processing.
+Hi! My name is Junkai Wu. I'm a third year Ph.D. student in the [Department of Electrical & Computer Engineering](https://www.ece.uw.edu/) at the [University of Washington](https://www.washington.edu/), advised by [Prof. Mari Ostendorf](https://people.ece.uw.edu/ostendorf/). My research is on models that understand and generate speech, sound, and music, across audio, language, and vision.
 
-Before coming to UW, I got my B.S. in Computer Engineering from the [University of Illinois Urbana-Champaign](https://ece.illinois.edu/), where I worked with [Prof. Paris Smaragdis](https://paris.cs.illinois.edu/) and [Prof. Mark Hasegawa-Johnson](https://speechtechnology.web.illinois.edu/mark-a-hasegawa-johnson/).
+Before coming to UW, I got my B.S. in Computer Engineering from the [University of Illinois Urbana-Champaign](https://ece.illinois.edu/), where I worked on audio and speech processing with [Prof. Paris Smaragdis](https://paris.cs.illinois.edu/) and [Prof. Mark Hasegawa-Johnson](https://speechtechnology.web.illinois.edu/mark-a-hasegawa-johnson/).

@@ -263,25 +263,23 @@ progress,
   }
 }
 
-.hero-subtitle {
+// Role line: quiet supporting detail.
+.hero-role {
   margin: 0.85rem 0 0;
-  max-width: 46ch;
-  font-size: 1.02rem;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.45;
   color: var(--global-text-color-light);
+}
 
-  a {
-    color: var(--global-text-color);
-    text-decoration: none;
-    border-bottom: 1px solid var(--global-divider-strong);
-    transition: color 0.18s ease, border-color 0.18s ease;
-
-    &:hover {
-      color: var(--global-theme-color);
-      border-bottom-color: var(--global-theme-color);
-      text-decoration: none;
-    }
-  }
+// Research line: the one-phrase answer to "what does he work on".
+.hero-tagline {
+  margin: 0.1rem 0 0;
+  font-family: $font-serif;
+  font-size: 1.32rem;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.014em;
+  color: var(--global-theme-color);
 }
 
 // Pill links: CV, email, Scholar, GitHub, …

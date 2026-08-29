@@ -18,7 +18,11 @@ layout: default
       </h1>
 
       {%- if page.subtitle %}
-      <p class="hero-subtitle">{{ page.subtitle }}</p>
+      <p class="hero-role">{{ page.subtitle }}</p>
+      {%- endif %}
+
+      {%- if page.tagline %}
+      <p class="hero-tagline">{{ page.tagline }}</p>
       {%- endif %}
 
       {%- if page.quick_links %}
