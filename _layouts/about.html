@@ -104,6 +104,11 @@ layout: default
       {%- include entry_list.html items=site.data.teaching %}
     {%- endif %}
 
+    <!-- Closing note -->
+    {%- if page.closing %}
+    <p class="about-closing">{{ page.closing }}</p>
+    {%- endif %}
+
     <!-- Social -->
     {%- if page.social %}
       <div class="social">

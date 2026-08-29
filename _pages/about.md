@@ -35,6 +35,10 @@ news: true  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
+
+closing: >
+  Away from research I take photographs &mdash; mostly skies, cities, and
+  the moon. A selection lives on the <a href="/photography/">photography</a> page.
 ---
 
 Hi! My name is Junkai Wu. I'm a third year Ph.D. student in the [Department of Electrical & Computer Engineering](https://www.ece.uw.edu/) at the [University of Washington](https://www.washington.edu/), advised by [Prof. Mari Ostendorf](https://people.ece.uw.edu/ostendorf/). My research is on <span class="hl">audio-centric multimodal AI</span>, and especially on text and multimodal LLMs that understand and generate **speech, music, and sound**, either end to end or as components in larger systems.

@@ -817,6 +817,128 @@ progress,
   }
 }
 
+// Closing note at the foot of the about page.
+.about-closing {
+  margin-top: 3.2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--global-divider-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+
+  a {
+    color: var(--global-text-color);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--global-theme-color);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- *
+ * Photography
+ * -------------------------------------------------------------------------- */
+
+// The whole page — heading included — breaks out of the text measure, so
+// photographs get more room than body copy while staying left-aligned.
+.photography-page {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: max(1.25rem, calc(50vw - 34rem));
+  padding-right: max(1.25rem, calc(50vw - 34rem));
+}
+
+.photo-page .section-heading {
+  margin-top: 3rem;
+
+  &:first-child {
+    margin-top: 1rem;
+  }
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem 1.6rem;
+  margin-bottom: 0.5rem;
+  align-items: start;
+}
+
+@media (min-width: 700px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    // Let a half-width photo backfill the hole a panorama leaves behind.
+    grid-auto-flow: dense;
+  }
+
+  // Panoramas are unreadable in a half-width column.
+  .photo--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+.photo {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    background: var(--global-accent-wash);
+    box-shadow:
+      0 0 0 1px var(--global-divider-color),
+      0 10px 26px -16px var(--global-shadow);
+    cursor: zoom-in;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+
+  &:hover img {
+    transform: translateY(-2px);
+    box-shadow:
+      0 0 0 1px var(--global-divider-strong),
+      0 16px 34px -16px var(--global-shadow);
+  }
+}
+
+.photo-caption {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--global-text-color-light);
+}
+
+.photo-desc {
+  display: block;
+  color: var(--global-text-color);
+}
+
+.photo-meta {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.78rem;
+}
+
+.photo-sep {
+  margin: 0 0.35em;
+  color: var(--global-divider-strong);
+}
+
+// medium-zoom lifts the image out of the grid; drop our own chrome then.
+.medium-zoom-image--opened {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
 /* -------------------------------------------------------------------------- *
  * Footer
  * -------------------------------------------------------------------------- */

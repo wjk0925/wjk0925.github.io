@@ -1,0 +1,262 @@
+# Generated from the red-flagged photos in ~/Desktop/photos.
+# date and device come from EXIF; location and description entered by hand.
+
+- id: ggb_5G0A8200
+  date: 2026-08-27
+  month: "2026-08"
+  month_label: "August 2026"
+  device: "Canon R6 Mark II"
+  location: "Sausalito, California, USA"
+  description: "飞机和挡住月亮的云"
+  width: 3177
+  height: 4766
+  panorama: false
+
+- id: 816ms_5G0A8101
+  date: 2026-08-13
+  month: "2026-08"
+  month_label: "August 2026"
+  device: "Canon R6 Mark II"
+  location: "Patterson, California, USA"
+  description: "Perseids and Milky Way (?)"
+  width: 6000
+  height: 2553
+  panorama: true
+
+- id: 816ms_5G0A8009
+  date: 2026-08-13
+  month: "2026-08"
+  month_label: "August 2026"
+  device: "Canon R6 Mark II"
+  location: "Patterson, California, USA"
+  description: "Perseids and Andromeda Galaxy (?)"
+  width: 4299
+  height: 2866
+  panorama: false
+
+- id: iphone_IMG_5606
+  date: 2026-07-28
+  month: "2026-07"
+  month_label: "July 2026"
+  device: "iPhone 17 Pro"
+  location: "Santa Clara, California, USA"
+  description: "Exit to the moon (操作系统学得好的同学可以登月)"
+  width: 3024
+  height: 3024
+  panorama: false
+
+- id: nyc_5G0A7645
+  date: 2026-07-12
+  month: "2026-07"
+  month_label: "July 2026"
+  device: "Canon R6 Mark II"
+  location: "New York City, New York, USA"
+  width: 4000
+  height: 5333
+  panorama: false
+
+- id: nyc_5G0A7572
+  date: 2026-07-12
+  month: "2026-07"
+  month_label: "July 2026"
+  device: "Canon R6 Mark II"
+  location: "New York City, New York, USA"
+  description: "Manhattanhenge但人太多了"
+  width: 2931
+  height: 4396
+  panorama: false
+
+- id: iphone_IMG_4530
+  date: 2026-06-17
+  month: "2026-06"
+  month_label: "June 2026"
+  device: "iPhone 17 Pro"
+  location: "Medford, Oregon, USA"
+  description: "PUSH BUTTON FOR the HUMAN BEAN!"
+  width: 3023
+  height: 3023
+  panorama: false
+
+- id: 2026_56_alaska_5G0A7159
+  date: 2026-06-03
+  month: "2026-06"
+  month_label: "June 2026"
+  device: "Canon R6 Mark II"
+  location: "Denali National Park, Alaska, USA"
+  description: "30% CLUB!"
+  width: 5995
+  height: 2551
+  panorama: true
+
+- id: 2026_3_5G0A4194
+  date: 2026-03-21
+  month: "2026-03"
+  month_label: "March 2026"
+  device: "Canon R6 Mark II"
+  location: "Seattle, Washington, USA"
+  description: "# cloud"
+  width: 2295
+  height: 3060
+  panorama: false
+
+- id: 2026_3_5G0A4175
+  date: 2026-03-21
+  month: "2026-03"
+  month_label: "March 2026"
+  device: "Canon R6 Mark II"
+  location: "Seattle, Washington, USA"
+  description: "Cherry blossoms at Ferdinand Street Hand Carry Boat Launch"
+  width: 3861
+  height: 5148
+  panorama: false
+
+- id: iphone_IMG_2329
+  date: 2026-03-19
+  month: "2026-03"
+  month_label: "March 2026"
+  device: "iPhone 17 Pro"
+  location: "Seattle, Washington, USA"
+  description: "秒速五英里(?)"
+  width: 4033
+  height: 4033
+  panorama: false
+
+- id: iphone_IMG_2157
+  date: 2026-03-11
+  month: "2026-03"
+  month_label: "March 2026"
+  device: "iPhone 17 Pro"
+  location: "Seattle, Washington, USA"
+  description: "西雅图中国城备战世界杯"
+  width: 2975
+  height: 2975
+  panorama: false
+
+- id: 2026_2_45_1.2_5G0A3406
+  date: 2026-02-24
+  month: "2026-02"
+  month_label: "February 2026"
+  device: "Canon R6 Mark II"
+  location: "Seattle, Washington, USA"
+  description: "UW campus, shot from ECEB"
+  width: 4000
+  height: 5333
+  panorama: false
+
+- id: iphone_IMG_1068
+  date: 2026-01-20
+  month: "2026-01"
+  month_label: "January 2026"
+  device: "iPhone 17 Pro"
+  location: "Seattle, Washington, USA"
+  description: "蛾眉月 #2"
+  width: 3024
+  height: 3024
+  panorama: false
+
+- id: iphone_IMG_1066
+  date: 2026-01-20
+  month: "2026-01"
+  month_label: "January 2026"
+  device: "iPhone 17 Pro"
+  location: "Seattle, Washington, USA"
+  description: "蛾眉月"
+  width: 4236
+  height: 5648
+  panorama: false
+
+- id: 2024_12_japan_5G0A1338
+  date: 2024-11-29
+  month: "2024-11"
+  month_label: "November 2024"
+  device: "Canon R6 Mark II"
+  location: "Tokyo, Japan"
+  description: "圣地巡礼"
+  width: 6000
+  height: 4000
+  panorama: false
+
+- id: 2024_12_japan_5G0A1159
+  date: 2024-11-28
+  month: "2024-11"
+  month_label: "November 2024"
+  device: "Canon R6 Mark II"
+  location: "Kamakura, Kanagawa, Japan"
+  width: 3781
+  height: 3781
+  panorama: false
+
+- id: 2024_10_5G0A0271
+  date: 2024-10-12
+  month: "2024-10"
+  month_label: "October 2024"
+  device: "Canon R6 Mark II"
+  location: "Moclips, Washington, USA"
+  description: "Another moon"
+  width: 3948
+  height: 1680
+  panorama: true
+
+- id: 2024_10_5G0A0261
+  date: 2024-10-12
+  month: "2024-10"
+  month_label: "October 2024"
+  device: "Canon R6 Mark II"
+  location: "Moclips, Washington, USA"
+  description: "Mocrocks Beach"
+  width: 5877
+  height: 2501
+  panorama: true
+
+- id: 2024_7_firework_5G0A9879
+  date: 2024-07-04
+  month: "2024-07"
+  month_label: "July 2024"
+  device: "Canon R6 Mark II"
+  location: "Seattle, Washington, USA"
+  description: "Independence Day fireworks at Gas Works Park"
+  width: 3985
+  height: 5978
+  panorama: false
+
+- id: 2024_1_7
+  date: 2024-01-14
+  month: "2024-01"
+  month_label: "January 2024"
+  device: "Canon R6 Mark II"
+  location: "Tacoma, Washington, USA"
+  description: "Mount Rainier"
+  width: 3971
+  height: 5956
+  panorama: false
+
+- id: 2024_1_2
+  date: 2024-01-14
+  month: "2024-01"
+  month_label: "January 2024"
+  device: "Canon R6 Mark II"
+  location: "Seattle, Washington, USA"
+  width: 3401
+  height: 3401
+  panorama: false
+
+- id: 2024_1_12
+  date: 2024-01-13
+  month: "2024-01"
+  month_label: "January 2024"
+  device: "Canon R6 Mark II"
+  location: "Seattle, Washington, USA"
+  width: 3979
+  height: 5969
+  panorama: false
+
+- id: 2024_1_10
+  date: 2024-01-13
+  month: "2024-01"
+  month_label: "January 2024"
+  device: "Canon R6 Mark II"
+  location: "Seattle, Washington, USA"
+  description: "Another Space Needle"
+  width: 3813
+  height: 5719
+  panorama: false
