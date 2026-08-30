@@ -6,6 +6,10 @@ description: Photographs I take outside of research.
 nav: true
 nav_order: 2
 class: photography-page
+# Not built at all while this is false: no page, no nav entry, no URL.
+# To release: set published to true AND photography_released to true in
+# _config.yml (that second flag also restores the about page's pointer).
+published: false
 ---
 
 {% if site.photography_released %}
