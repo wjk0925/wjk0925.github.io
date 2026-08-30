@@ -6,43 +6,40 @@ description: Photographs I take outside of research.
 nav: true
 nav_order: 2
 class: photography-page
-# Not built at all while this is false: no page, no nav entry, no URL.
-# To release: set published to true AND photography_released to true in
-# _config.yml (that second flag also restores the about page's pointer).
-published: false
 ---
 
 {% if site.photography_released %}
 {%- assign photos = site.data.photography -%}
-{%- assign current_month = "" -%}
+{%- assign current_theme = "" -%}
 
 <div class="photo-page">
 {%- for photo in photos %}
-  {%- if photo.month != current_month -%}
+  {%- if photo.theme != current_theme -%}
     {%- unless forloop.first %}
   </div>
     {%- endunless %}
-  <h2 class="section-heading">{{ photo.month_label }}</h2>
+  <h2 class="section-heading">{{ photo.theme }}</h2>
   <div class="photo-grid">
-    {%- assign current_month = photo.month -%}
+    {%- assign current_theme = photo.theme -%}
   {%- endif %}
-    <button type="button" class="photo"
-      data-index="{{ forloop.index0 }}"
+    <button type="button" class="photo" style="--ar: {{ photo.ar }}"
+      data-ar="{{ photo.ar }}"
       data-full="{{ '/assets/img/photography/' | append: photo.id | append: '_full.jpg' | relative_url }}"
-      data-desc="{{ photo.description | default: '' | escape }}"
-      data-location="{{ photo.location | escape }}"
+      data-location="{{ photo.location | default: '' | escape }}"
       data-device="{{ photo.device | escape }}"
-      data-date="{{ photo.date }}"
-      aria-label="{{ photo.description | default: photo.location | escape }}">
+      data-date="{{ photo.date_label }}"
+      aria-label="{{ photo.description | default: photo.location | default: photo.theme | escape }}">
       <img
         src="{{ '/assets/img/photography/' | append: photo.id | append: '.jpg' | relative_url }}"
-        alt="{{ photo.description | default: photo.location | escape }}"
+        alt="{{ photo.description | default: photo.location | default: photo.theme | escape }}"
         width="{{ photo.width }}" height="{{ photo.height }}"
         loading="lazy" decoding="async">
+      {%- if photo.description or photo.location %}
       <span class="photo-hover">
         {%- if photo.description %}<span class="photo-desc">{{ photo.description }}</span>{% endif -%}
-        <span class="photo-meta">{{ photo.location }}</span>
+        {%- if photo.location %}<span class="photo-meta">{{ photo.location }}</span>{% endif -%}
       </span>
+      {%- endif %}
     </button>
 {%- endfor %}
   </div>
@@ -61,7 +58,7 @@ published: false
   </figure>
 </div>
 
-<script src="{{ '/assets/js/lightbox.js' | relative_url | bust_file_cache }}" defer></script>
+<script src="{{ '/assets/js/gallery.js' | relative_url | bust_file_cache }}" defer></script>
 {% else %}
 
 <div class="construction">
