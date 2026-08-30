@@ -6,6 +6,12 @@ description: Photographs I take outside of research.
 nav: true
 nav_order: 2
 class: photography-page
+# Not built at all while this is false: no page, no nav entry, no URL, no
+# sitemap record. To release, set this to true AND photography_released to
+# true in _config.yml (that flag also restores the about page's pointer),
+# then restore the images with:
+#   git checkout 8f469ed -- assets/img/photography
+published: false
 ---
 
 {% if site.photography_released %}
