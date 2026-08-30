@@ -1,34 +1,190 @@
-"Adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+# Co-author links, keyed by last name as BibTeX parses it. Each entry lists
+# first-name variants because BibTeX puts middle names in the "first" field
+# ("Romit Roy Choudhury" parses as first "Romit Roy", last "Choudhury").
+# Preference order: personal site, then LinkedIn, then school/lab page.
 
-"Podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"Jiang":
+  - firstname: ["Xilin"]
+    url: https://xi-j.github.io
 
-"Rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"Wang":
+  - firstname: ["Qiaolin"]
+    url: https://qiaolinwang.github.io
+  - firstname: ["Zhepei"]
+    url: https://zhepeiw.com/
+  - firstname: ["Liming"]
+    url: https://lwang114.github.io/
 
-"Bach": 
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"He":
+  - firstname: ["Linyang"]
+    url: https://linyanghe.github.io
+  - firstname: ["Xiaomin"]
+    url: https://www.linkedin.com/in/xmhe
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"Mesgarani":
+  - firstname: ["Nima"]
+    url: https://nima.ee.columbia.edu
 
-"Przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
+"Xu":
+  - firstname: ["Zhongweiyang"]
+    url: https://xzwy.github.io/alanweiyang.github.io
 
-"Schrödinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
+"Ma":
+  - firstname: ["Yinghao"]
+    url: https://nicolaus625.github.io
+  - firstname: ["Yuesheng"]
+    url: https://www.linkedin.com/in/yuesheng-ma-3321b036a
 
-"Lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
+"Piao":
+  - firstname: ["Minshuo"]
+    url: https://www.linkedin.com/in/minshuo-piao-08a5b2330
 
-"Planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"Yang":
+  - firstname: ["Kaiyi"]
+    url: https://www.linkedin.com/in/kaiyi-yang-16041a165
+
+"Zheng":
+  - firstname: ["Xiuwen"]
+    url: https://www.linkedin.com/in/xiuwen-zheng-02439822b
+
+"Shimizu":
+  - firstname: ["Riki"]
+    url: https://www.linkedin.com/in/riki-shimizu-85ba1019b
+
+"Chen":
+  - firstname: ["Yicong"]
+    url: https://bryce-chen.github.io
+  - firstname: ["Weixiong"]
+    url: https://linkedin.com/in/leonchenmusic
+
+"Firoozi":
+  - firstname: ["Arsalan"]
+    url: https://www.linkedin.com/in/arsalan-firoozi-6474927b
+
+"Mischler":
+  - firstname: ["Gavin"]
+    url: https://gavinmischler.github.io
+
+"Dindar":
+  - firstname: ["Sukru Samet", "Sukru"]
+    url: https://www.linkedin.com/in/sukru-samet-dindar
+
+"Antonello":
+  - firstname: ["Richard"]
+    url: https://scholar.google.com/citations?user=EtEVFLoAAAAJ
+
+"Hsieh":
+  - firstname: ["Tsun-An"]
+    url: https://alexiehta.github.io
+
+"Fan":
+  - firstname: ["Xulin"]
+    url: https://www.linkedin.com/in/xulin-fan-4a4524332
+
+"Wu":
+  - firstname: ["Yulun"]
+    url: https://yulunwu1102.github.io
+
+"Amballa":
+  - firstname: ["Chaitanya"]
+    url: https://achaitanya.web.illinois.edu
+
+"Hai":
+  - firstname: ["Jiarui"]
+    url: https://haidog-yaqub.github.io
+
+"Li":
+  - firstname: ["Ruisi"]
+    url: https://www.linkedin.com/in/ruisi-li-52b30b330
+  - firstname: ["Yinghao Aaron", "Yinghao"]
+    url: https://www.linkedin.com/in/yinghao-li-08930a183
+  - firstname: ["Jialu"]
+    url: https://sites.google.com/view/jialuli/
+
+"Choudhari":
+  - firstname: ["Vishal"]
+    url: https://www.vishalchoudhari.com
+
+"Han":
+  - firstname: ["Cong"]
+    url: https://www.linkedin.com/in/cong-han
+
+"Flinker":
+  - firstname: ["Adeen"]
+    url: https://med.nyu.edu/faculty/adeen-flinker
+
+"Elhilali":
+  - firstname: ["Mounya"]
+    url: https://engineering.jhu.edu/faculty/mounya-elhilali
+
+"Benetos":
+  - firstname: ["Emmanouil"]
+    url: https://webspace.eecs.qmul.ac.uk/emmanouil.benetos
+
+"Hasegawa-Johnson":
+  - firstname: ["Mark", "Mark A", "Mark A."]
+    url: https://speechtechnology.web.illinois.edu/mark-a-hasegawa-johnson
+
+"Choudhury":
+  - firstname: ["Romit Roy", "Romit"]
+    url: https://croy.web.engr.illinois.edu
+
+"Lu":
+  - firstname: ["Bo-Ru"]
+    url: https://www.linkedin.com/in/boru-roylu/
+
+"Ostendorf":
+  - firstname: ["Mari"]
+    url: https://people.ece.uw.edu/ostendorf/
+
+"Casebeer":
+  - firstname: ["Jonah"]
+    url: https://jmcasebeer.github.io/
+
+"Smaragdis":
+  - firstname: ["Paris"]
+    url: https://www.mit.edu/~paris/
+
+"Ni":
+  - firstname: ["Junrui"]
+    url: https://www.linkedin.com/in/junrui-ni-931051156/
+
+"Gao":
+  - firstname: ["Heting"]
+    url: https://www.linkedin.com/in/heting-gao-7b6931129/
+
+"Chang":
+  - firstname: ["Kai Chieh", "Kai-Chieh"]
+    url: https://www.linkedin.com/in/kai-chieh-jeff-chang-9aa01115a/
+
+"Yoo":
+  - firstname: ["Chang"]
+    url: http://sanctusfactory.com/family.php
+
+"Subakan":
+  - firstname: ["Cem", "Y. Cem"]
+    url: https://ycemsubakan.github.io/
+
+"Subramani":
+  - firstname: ["Krishna"]
+    url: https://subramanikrishna.github.io/
+
+"Tavares":
+  - firstname: ["Tiago"]
+    url: https://tiagoft.github.io/
+
+"Ayres":
+  - firstname: ["Fabio"]
+    url: https://www.linkedin.com/in/fabio-ayres-72a55427/
+
+"Tzinis":
+  - firstname: ["Efthymios"]
+    url: https://etzinis.github.io/
+
+"Ravanelli":
+  - firstname: ["Mirco"]
+    url: https://sites.google.com/site/mircoravanelli/
+
+"Bryan":
+  - firstname: ["Nicholas J.", "Nicholas", "Nicholas J"]
+    url: https://njb.github.io/
