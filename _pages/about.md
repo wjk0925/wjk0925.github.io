@@ -13,7 +13,7 @@ profile:
 
 quick_links:
   - title: CV
-    url: /assets/pdf/JunkaiWu_Resume_Oct25_2.pdf
+    url: /assets/pdf/JunkaiWu_Resume_Sep2026.pdf
     icon: fas fa-file-lines
     primary: true
   - title: Email
@@ -39,6 +39,6 @@ social: false  # includes social icons at the bottom of the page
 closing: Some of the <a href="/photography/">photos</a> I took.
 ---
 
-Hi! My name is Junkai Wu. I'm a third year Ph.D. student in the [Department of Electrical & Computer Engineering](https://www.ece.uw.edu/) at the [University of Washington](https://www.washington.edu/), advised by [Prof. Mari Ostendorf](https://people.ece.uw.edu/ostendorf/). My research is on <span class="hl">audio-centric multimodal AI</span>, and especially on text and multimodal LLMs that understand and generate **speech, music, and sound**, either end to end or as components in larger systems.
+Hi! My name is Junkai Wu. I'm a fourth-year Ph.D. student in the [Department of Electrical & Computer Engineering](https://www.ece.uw.edu/) at the [University of Washington](https://www.washington.edu/), advised by [Prof. Mari Ostendorf](https://people.ece.uw.edu/ostendorf/). My research is on <span class="hl">audio-centric multimodal AI</span>, and especially on text and multimodal LLMs that understand and generate **speech, music, and sound**, either end to end or as components in larger systems.
 
 Before coming to UW, I got my B.S. in Computer Engineering from the [University of Illinois Urbana-Champaign](https://ece.illinois.edu/), where I worked on audio processing with [Prof. Paris Smaragdis](https://www.mit.edu/~paris/) and speech processing with [Prof. Mark Hasegawa-Johnson](https://speechtechnology.web.illinois.edu/mark-a-hasegawa-johnson/).
