@@ -13,7 +13,7 @@ profile:
 
 quick_links:
   - title: CV
-    url: /assets/pdf/JunkaiWu_Resume_Sep2026.pdf
+    url: /assets/pdf/JunkaiWu_Oct2026.pdf
     icon: fas fa-file-lines
     primary: true
   - title: Email
